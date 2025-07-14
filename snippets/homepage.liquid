@@ -27,3 +27,15 @@
     </div>
   </div>
 </div>
+{% comment %} Partnar {% endcomment %}
+ <div class="bg-black  py-6">
+  <div class="container">
+    <div class="flex">
+      {% for item in (1..7) %}
+        <div class="flex-1 pr-8">
+          <img src="{{'vector.png'| asset_url}}" height="" width="" alt="">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
