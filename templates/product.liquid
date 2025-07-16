@@ -1,0 +1,93 @@
+<div class="">
+  <div class="container">
+    <div class="border-t border-gray-200 pt-6 pb-20">
+      <div class="flex items-center mb-8">
+        <a class="text-gray-400" href="{{shop.url}}">Home</a>
+        <svg class="mx-2" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.53073 0.469372L6.53073 5.46937C6.60065 5.53905 6.65613 5.62184 6.69399 5.71301C6.73184 5.80417 6.75133 5.90191 6.75133 6.00062C6.75133 6.09933 6.73184 6.19707 6.69399 6.28824C6.65613 6.3794 6.60065 6.46219 6.53073 6.53187L1.53073 11.5319C1.38984 11.6728 1.19874 11.7519 0.999484 11.7519C0.800227 11.7519 0.609131 11.6728 0.468235 11.5319C0.327338 11.391 0.248184 11.1999 0.248184 11.0006C0.248184 10.8014 0.327338 10.6103 0.468235 10.4694L4.93761 6L0.46761 1.53062C0.326714 1.38973 0.247559 1.19863 0.247559 0.999372C0.247559 0.800115 0.326714 0.609018 0.46761 0.468122C0.608506 0.327227 0.799603 0.24807 0.99886 0.24807C1.19812 0.24807 1.38921 0.327227 1.53011 0.468122L1.53073 0.469372Z"
+            fill="black" fill-opacity="0.6" />
+        </svg>
+        <a class="text-gray-400" href="{{shop.url}}">Shop</a>
+        <svg class="mx-2" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.53073 0.469372L6.53073 5.46937C6.60065 5.53905 6.65613 5.62184 6.69399 5.71301C6.73184 5.80417 6.75133 5.90191 6.75133 6.00062C6.75133 6.09933 6.73184 6.19707 6.69399 6.28824C6.65613 6.3794 6.60065 6.46219 6.53073 6.53187L1.53073 11.5319C1.38984 11.6728 1.19874 11.7519 0.999484 11.7519C0.800227 11.7519 0.609131 11.6728 0.468235 11.5319C0.327338 11.391 0.248184 11.1999 0.248184 11.0006C0.248184 10.8014 0.327338 10.6103 0.468235 10.4694L4.93761 6L0.46761 1.53062C0.326714 1.38973 0.247559 1.19863 0.247559 0.999372C0.247559 0.800115 0.326714 0.609018 0.46761 0.468122C0.608506 0.327227 0.799603 0.24807 0.99886 0.24807C1.19812 0.24807 1.38921 0.327227 1.53011 0.468122L1.53073 0.469372Z"
+            fill="black" fill-opacity="0.6" />
+        </svg>
+        <a class="text-gray-400" href="{{shop.url}}">Collection Name</a>
+        <svg class="mx-2" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.53073 0.469372L6.53073 5.46937C6.60065 5.53905 6.65613 5.62184 6.69399 5.71301C6.73184 5.80417 6.75133 5.90191 6.75133 6.00062C6.75133 6.09933 6.73184 6.19707 6.69399 6.28824C6.65613 6.3794 6.60065 6.46219 6.53073 6.53187L1.53073 11.5319C1.38984 11.6728 1.19874 11.7519 0.999484 11.7519C0.800227 11.7519 0.609131 11.6728 0.468235 11.5319C0.327338 11.391 0.248184 11.1999 0.248184 11.0006C0.248184 10.8014 0.327338 10.6103 0.468235 10.4694L4.93761 6L0.46761 1.53062C0.326714 1.38973 0.247559 1.19863 0.247559 0.999372C0.247559 0.800115 0.326714 0.609018 0.46761 0.468122C0.608506 0.327227 0.799603 0.24807 0.99886 0.24807C1.19812 0.24807 1.38921 0.327227 1.53011 0.468122L1.53073 0.469372Z"
+            fill="black" fill-opacity="0.6" />
+        </svg>
+        <a class="" href="{{shop.url}}">{{ product.title }}</a>
+        <span class="">{{ page.title }}</span>
+      </div>
+
+      {% comment %} Product Info {% endcomment %}
+      <div class="flex -mx-4 mb-8">
+        <div class="w-5/12 px-4">
+          <div class="flex">
+            <div class="w-48 mr-3">
+              {%- for i in (1..3) -%}
+              <img class="rounded-2xl w-full mb-3" height="" width="" src="{{"gallary.png" | asset_url }}" alt="">
+              {%- endfor -%}
+            </div>
+            <div class="w-full pb-3">
+              <img class="rounded-2xl w-full h-full mb-3" height="" width="" src="{{"gallary.png" | asset_url }}"
+                alt="">
+            </div>
+          </div>
+        </div>
+        <div class="w-7/12 px-4">
+          <h2 class="section_title">{{product.title}}</h2>
+
+          <div class="flex text-gray-500 items-center mb-4">
+            <div class="flex mr-2">
+              {%- for i in (1...5) -%}
+              <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.3562 0L15.8569 7.53796L24.1077 8.53794L18.0204 14.1966L19.619 22.3526L12.3562 18.3119L5.09341 22.3526L6.69201 14.1966L0.604756 8.53794L8.85555 7.53796L12.3562 0Z"
+                  fill="#FFC633" />
+              </svg>
+              {%- endfor -%}
+              <span class="ml-2">3.5/5</span>
+            </div>
+          </div>
+
+          <div class="flex text-xl font-bold text-black item-center">
+            $260 <span class="text-gray-400 line-through mx-3"> $360</span>
+            <span class="font-normal text-red-600 bg-red-100 text-sm px-3 py-1 rounded-full">-$60</span>
+          </div>
+
+          <div class="my-6 pb-6 border-b border-gray-200">
+            This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.
+          </div>
+
+          <div class="flex">
+            <input type="number" min="1" value="1" name="" id="" class="w-24 bg-gray-100 text-center rounded-full mr-2">
+             <button class="px-10 py-2 bg-black text-white rounded-full">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      {% comment %} script {% endcomment %}
+
+      <script>
+        jQuery(document).ready(function ($) {
+       $('.rrf-product-tab button').click(function(){
+        let index=$(this).index();
+        $('.rrf-product-tab button').removeClass('active')
+       })
+      });
+      </script>
+
+
+      <div class="rrf-product-tab">
+        <button>Product Details</button>
+        <button class="active">Reviews & Rating</button>
+        <button>FAQs</button>
+      </div>
+
+    </div>
+  </div>
+</div>
