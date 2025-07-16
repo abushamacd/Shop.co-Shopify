@@ -74,3 +74,23 @@ body {
 .testimonial_carousal .slick-slide:not(.slick-active) {
   filter: blur(2px);
 }
+
+/* Product apge */
+
+.rrf-product-page {
+    display: flex;
+    justify-content: space-evenly;
+    color: gray;
+}
+.rrf-product-page > button{
+    border-bottom: 1px solid #e1dcdc;
+}
+
+.rrf-product-tab>.active {
+    color: black;
+    border-bottom: 1px solid black;
+}
+.rrf-product-tab>.active {
+    color: black;
+    border-bottom: 1px solid black;
+}
