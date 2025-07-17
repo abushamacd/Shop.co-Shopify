@@ -1,0 +1,17 @@
+<div class="bg-black py-2 text-white text-center text-sm tp_ab">
+  <div class="container">{{ section.settings['ab-text'] }}</div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "ab-text",
+      "label": "Announcement",
+      "default": "Welcome to my shop!"
+    }
+  ]
+}
+{% endschema %}
