@@ -77,12 +77,14 @@ body {
 
 /* Product apge */
 
-.rrf-product-page {
+.rrf-product-tab {
     display: flex;
     justify-content: space-evenly;
     color: gray;
 }
-.rrf-product-page > button{
+
+.rrf-product-tab > button{
+  width: 100%;
     border-bottom: 1px solid #e1dcdc;
 }
 

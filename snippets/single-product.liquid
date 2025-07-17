@@ -1,0 +1,17 @@
+<div class="product_card">
+  <div class="bg-gray-100 rounded-lg mb-6">
+    <img class="w-full rounded-lg" src="{{'product.png'| asset_url}}" height="" width="" alt="">
+  </div>
+  <h3 class="capitalize text-xl mb-2">T-Shirt with TAPE DETAILS</h3>
+  <div class="flex items-center text-gray-500 mb-4 text-sm">
+    <div class="flex mr-4">
+      {% for item in (1..5) %}
+        <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.24494 0.255005L11.8641 5.89491L18.0374 6.6431L13.4829 10.8769L14.679 16.9793L9.24494 13.956L3.8109 16.9793L5.00697 10.8769L0.452479 6.6431L6.62573 5.89491L9.24494 0.255005Z" fill="#FFC633"/>
+        </svg>
+      {% endfor %}
+    </div>
+    4.5/5
+  </div>
+  <p class="text-2xl font-bold">$120</p>
+</div>
