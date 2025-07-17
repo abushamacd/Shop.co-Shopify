@@ -1,8 +1,10 @@
-<div class="product_card">
-  <div class="bg-gray-100 rounded-lg mb-6">
-    <img class="w-full rounded-lg" src="{{'product.png'| asset_url}}" height="" width="" alt="">
+<div class="product_card mb-10">
+  <div style="min-height: 440px;" class="">
+    <div class="bg-gray-100 rounded-lg mb-6">
+      <img class="w-full rounded-lg" src="{{'product.png'| asset_url}}" height="" width="" alt="">
+    </div>
+    <h3 class="capitalize text-xl mb-2">{{ product.title }}</h3>
   </div>
-  <h3 class="capitalize text-xl mb-2">{{ product.title }}</h3>
   <div class="flex items-center text-gray-500 mb-4 text-sm">
     <div class="flex mr-4">
       {% for item in (1..5) %}

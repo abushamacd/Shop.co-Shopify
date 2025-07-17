@@ -1,0 +1,55 @@
+<div class="border-b border-gray-200 py-16">
+  <h2 class="section_title text-center">{{ section.settings['section-title'] }}</h2>
+
+  <div class="flex flex-wrap -mx-4">
+    {% for product in section.settings.collecttion.products %}
+      <div class="w-{{section.settings.grid_size}}/12 px-4 ">
+        {%- render 'single-product', product: product -%}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="mt-10 text-center">
+    <a href="{{- section.settings.url -}}" class="rounded-full px-14 py-2 font-sm text-[16px] border border-gray-200">
+      {{- section.settings.button_text -}}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "id": "section-title",
+      "type": "text",
+      "label": "Section Title",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "collection",
+      "id": "collecttion",
+      "label": "Choose a collection"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View All"
+    },
+    {
+      "type": "range",
+      "id": "grid_size",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Grid Size",
+      "default": 3
+    }
+  ]
+}
+{% endschema %}

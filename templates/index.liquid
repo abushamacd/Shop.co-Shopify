@@ -40,20 +40,9 @@
   </div>
 </div>
 {% comment %} New Arrivals {% endcomment %}
-<div class="py-20">
+<div class="pb-16">
   <div class="container">
-    <h2 class="section_title text-center">NEW ARRIVALS</h2>
-
-    <div class="flex flex-wrap -mx-4">
-      {% for item in (1..4) %}
-        <div class="w-1/4 px-4 ">
-          {%- render 'single-product' -%}
-        </div>
-      {% endfor %}
-    </div>
-    <div class="mt-10 text-center">
-      <a href="" class="rounded-full px-14 py-2 font-sm text-[16px] border border-gray-200">View All</a>
-    </div>
+    {% section 'product-grid' %}
   </div>
 </div>
 {% comment %} Browse by style {% endcomment %}
