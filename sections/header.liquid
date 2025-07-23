@@ -1,6 +1,4 @@
 <header>
-  {% section 'announcement-bar' %}
-
   <div class="py-6">
     <div class="container">
       <div class="flex items-center -mx-4">
@@ -47,3 +45,19 @@
     </div>
   </div>
 </header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [],
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "presets": [
+    {
+      "name": "Header",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

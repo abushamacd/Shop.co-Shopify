@@ -1,17 +1,24 @@
-<div class="border-b border-gray-200 py-16">
-  <h2 class="section_title text-center">{{ section.settings['section-title'] }}</h2>
+<div class="pb-16">
+  <div class="container">
+    <div class="border-b border-gray-200 py-16">
+      <h2 class="section_title text-center">{{ section.settings['section-title'] }}</h2>
 
-  <div class="flex flex-wrap -mx-4">
-    {% for product in section.settings.collecttion.products %}
-      <div class="w-{{section.settings.grid_size}}/12 px-4 ">
-        {%- render 'single-product', product: product -%}
+      <div class="flex flex-wrap -mx-4">
+        {% for product in section.settings.collecttion.products %}
+          <div class="w-{{section.settings.grid_size}}/12 px-4 ">
+            {%- render 'single-product', product: product -%}
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-  <div class="mt-10 text-center">
-    <a href="{{- section.settings.url -}}" class="rounded-full px-14 py-2 font-sm text-[16px] border border-gray-200">
-      {{- section.settings.button_text -}}
-    </a>
+      <div class="mt-10 text-center">
+        <a
+          href="{{- section.settings.url -}}"
+          class="rounded-full px-14 py-2 font-sm text-[16px] border border-gray-200"
+        >
+          {{- section.settings.button_text -}}
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -49,6 +56,15 @@
       "step": 1,
       "label": "Grid Size",
       "default": 3
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "presets": [
+    {
+      "name": "Product Grid",
+      "settings": {}
     }
   ]
 }

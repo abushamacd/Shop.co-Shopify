@@ -1,0 +1,31 @@
+{
+    "sections": {
+        "hero": {
+            "type": "hero",
+            "name": "Hero Section",
+        },
+        "partnar": {
+            "type": "partnar",
+            "name": "Partnar Section",
+        },
+        "product-grid": {
+            "type": "product-grid",
+            "name": "Product Grid",
+        },
+        "category-box": {
+            "type": "category-box",
+            "name": "Category Boxs",
+        },
+        "testimonial": {
+            "type": "testimonial",
+            "name": "Testimonial Section",
+        },
+    },
+    "order": [
+        "hero",
+        "partnar",
+        "product-grid",
+        "category-box",
+        "testimonial",
+    ]
+}

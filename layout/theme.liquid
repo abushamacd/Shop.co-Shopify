@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop.Co</title>
@@ -34,13 +34,13 @@
     {{ 'tailwind.css' | asset_url | stylesheet_tag }}
     {% comment %} Custom {% endcomment %}
     {{ 'style.css' | asset_url | stylesheet_tag }}
-    
+
     {% comment %} Content for Header {% endcomment %}
-    {{content_for_header}}
-</head>
-<body>
-    {%- render 'header' -%}
-    {{content_for_layout}}
-    {%- render 'footer' -%}
-</body>
+    {{ content_for_header }}
+  </head>
+  <body>
+    {%- sections 'header-group' -%}
+    {{ content_for_layout }}
+    {%- sections 'footer-group' -%}
+  </body>
 </html>
