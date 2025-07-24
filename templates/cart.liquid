@@ -50,9 +50,7 @@
                       </svg>
                     </a>
                     <div class="flex px-5 border border-gray-200 rounded-full bg-[#F0F0F0]">
-                      <button>-</button>
-                      <div class="px-3 py-1">{{ product.quantity }}</div>
-                      <button>+</button>
+                      {%- render 'quantity' -%}
                     </div>
                   </div>
                 </div>

@@ -80,40 +80,7 @@
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}  ">
             {%- endif -%}
             <div class="flex gap-4 mt-4">
-              <script>
-                jQuery(document).ready(function ($) {
-                  $('.minus').click(function () {
-                    let quantity = parseInt($('.quantity').text());
-                    if (quantity > 1) {
-                      $('.quantity').text(quantity - 1);
-                    }
-                  });
-                  $('.plus').click(function () {
-                    let quantity = parseInt($('.quantity').text());
-                    $('.quantity').text(quantity + 1);
-                  });
-                });
-              </script>
-              <div class="flex justify-center items-center px-5 border border-gray-200 rounded-full bg-[#F0F0F0]">
-                <button type="button" class="minus">-</button>
-                <span
-                  style="width: 40px;"
-                  class="quantity text-center"
-                  >1</span
-                >
-                <button type="button" class="plus">+</button>
-              </div>
-              {% comment %}
-                <input
-                  name="quantity"
-                  type="number"
-                  min="1"
-                  value="1"
-                  name=""
-                  id=""
-                  class="w-4/12 bg-gray-100 text-center rounded-full mr-2"
-                >
-              {% endcomment %}
+              {%- render 'quantity' -%}
               <button class="w-8/12 px-10 py-2 bg-black text-white rounded-full">Add to Cart</button>
             </div>
           {% endform %}
