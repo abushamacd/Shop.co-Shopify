@@ -1,4 +1,5 @@
 <div class="">
+  <script async src="{{ 'cart.js' | asset_url }}"></script>
   <div class="container">
     <div class="border-t border-gray-200 pt-6 pb-20">
       <div class="flex items-center mb-8">
@@ -71,17 +72,26 @@
           </div>
           {% form 'product', product %}
             {%- if product.variants.size > 1 -%}
-              <select class="px-5 py-3 border border-gray-200 rounded-full bg-[#F0F0F0]" name="id">
+              <select
+                class="px-5 py-3 border border-gray-200 rounded-full bg-[#F0F0F0]"
+                name="varient_id"
+                id="varient_id"
+              >
                 {%- for varient in product.variants -%}
                   <option value="{{varient.id}}">{{ varient.title }}</option>
                 {%- endfor -%}
               </select>
             {%- else -%}
-              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}  ">
+              <input
+                type="hidden"
+                id="varient_id"
+                name="varient_id"
+                value="{{ product.selected_or_first_available_variant.id }}  "
+              >
             {%- endif -%}
             <div class="flex gap-4 mt-4">
-              {%- render 'quantity' -%}
-              <button class="w-8/12 px-10 py-2 bg-black text-white rounded-full">Add to Cart</button>
+              {% render 'quantity', type: 'product' %}
+              <button type="submit" class="w-8/12 px-10 py-2 bg-black text-white rounded-full">Add to Cart</button>
             </div>
           {% endform %}
         </div>

@@ -1,32 +1,54 @@
 <script>
-  jQuery(function ($) {
-    function updateQuantity(change) {
-      let $qtyDisplay = $('.quantity');
-      let quantity = parseInt($qtyDisplay.text()) + change;
-      if (quantity < 1) return;
-      $qtyDisplay.text(quantity);
-      $("input[name='quantity']").val(quantity);
-    }
+  jQuery(document).ready(function ($) {
+    $('.minus')
+      .off('click')
+      .on('click', function () {
+        const container = $(this).closest('.quantity-wrapper');
+        let quantity = parseInt(container.find('.quantity').text());
 
-    $('.minus').click(() => updateQuantity(-1));
-    $('.plus').click(() => updateQuantity(1));
+        if (quantity > 1) {
+          quantity--;
+          container.find('.quantity').text(quantity);
+          container.find('.quantity-hidden').val(quantity);
+        }
+      });
+
+    $('.plus')
+      .off('click')
+      .on('click', function () {
+        const container = $(this).closest('.quantity-wrapper');
+        let quantity = parseInt(container.find('.quantity').text());
+
+        quantity++;
+        container.find('.quantity').text(quantity);
+        container.find('.quantity-hidden').val(quantity);
+      });
+
+          {% if type == "cart" %}
+            // submit form when quantity changes
+            $(".plus, .minus").on("click", function () {
+              $(this).closest("form").submit();
+            });
+          {% endif %}
   });
 </script>
-<div class="flex justify-center items-center px-5 border border-gray-200 rounded-full bg-[#F0F0F0]">
+
+<div class="quantity-wrapper flex justify-center items-center px-5 border border-gray-200 rounded-full bg-[#F0F0F0]">
   <button type="button" class="minus">-</button>
-  <span
-    style="width: 40px;"
-    class="quantity text-center"
-    >1</span
-  >
+  <span style="width: 40px;" class="quantity text-center">
+    {% if type == 'cart' %}
+      {{ quantity }}
+    {% else %}
+      1
+    {% endif %}
+  </span>
   <button type="button" class="plus">+</button>
+
+  <input
+    name="{% if type == 'cart' %}updates[{{item_key}}]{% else %}quantity{% endif %}"
+    type="hidden"
+    min="1"
+    value="1"
+    class="quantity-hidden"
+  >
 </div>
-<input
-  name="quantity"
-  type="hidden"
-  min="1"
-  value="0"
-  name=""
-  id=""
-  class="w-4/12 bg-gray-100 text-center rounded-full mr-2"
->
