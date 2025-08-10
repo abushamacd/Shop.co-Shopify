@@ -34,6 +34,8 @@
     {{ 'tailwind.css' | asset_url | stylesheet_tag }}
     {% comment %} Custom {% endcomment %}
     {{ 'style.css' | asset_url | stylesheet_tag }}
+    {% comment %} Load main JS {% endcomment %}
+    <script async src="{{'main.js' |  asset_url}}"></script>
 
     {% comment %} Content for Header {% endcomment %}
     {{ content_for_header }}
