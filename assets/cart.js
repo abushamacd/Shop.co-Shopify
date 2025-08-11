@@ -1,13 +1,9 @@
 jQuery(document).ready(function ($) {
-  $.ajax({
-    type: "GET",
-    url: "/cart.js",
-    dataType: "json",
-    success: function (response) {
-      $(".cart_items").empty();
-      $.each(response.items, function (index, item) {
-        $(".cart_items").append(`
-          <form action="{{routes.cart_url}}" method="post">
+  function cartItem(items) {
+    $(".cart_items").empty();
+    $.each(items, function (index, item) {
+      $(".cart_items").append(`
+          <div action="{{routes.cart_url}}" method="post">
                 <div class="">
                   <div class="flex justify-between p-5 border-b border-gray-100 px-6">
                     <div class="flex justify-between">
@@ -40,10 +36,16 @@ jQuery(document).ready(function ($) {
                     </div>
                   </div>
                 </div>
-              </form>`);
-      });
+              </div>`);
+    });
+  }
 
-      console.log(response);
+  $.ajax({
+    type: "GET",
+    url: "/cart.js",
+    dataType: "json",
+    success: function (response) {
+      cartItem(response.items);
     },
   });
 
@@ -65,8 +67,18 @@ jQuery(document).ready(function ($) {
       dataType: "json",
       data: JSON.stringify({ updates }),
       success: function (response) {
-        console.log(response);
-        location.reload();
+        cartItem(response.items);
+
+        // if (response.item_count === 0) {
+        //   $(".empty_cart")
+        //     .html(`<div class=" flex flex-col justify-center items-center gap-2">
+        //   <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //     <circle cx="50" cy="50" r="45" stroke="#D1D5DB" stroke-width="10"/>
+        //     <path d="M30 50L45 65L70 35" stroke="#4B5563" stroke-width="10" stroke-linecap="round"/>
+        //   </svg>
+        //   <div class="text-gray-500 text-lg inline-block">Your cart is empty</div>
+        // </div>`);
+        // }
       },
       error: function (error) {
         console.error("Error removing item from cart:", error);
