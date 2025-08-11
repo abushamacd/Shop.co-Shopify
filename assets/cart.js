@@ -69,16 +69,16 @@ jQuery(document).ready(function ($) {
       success: function (response) {
         cartItem(response.items);
 
-        // if (response.item_count === 0) {
-        //   $(".empty_cart")
-        //     .html(`<div class=" flex flex-col justify-center items-center gap-2">
-        //   <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        //     <circle cx="50" cy="50" r="45" stroke="#D1D5DB" stroke-width="10"/>
-        //     <path d="M30 50L45 65L70 35" stroke="#4B5563" stroke-width="10" stroke-linecap="round"/>
-        //   </svg>
-        //   <div class="text-gray-500 text-lg inline-block">Your cart is empty</div>
-        // </div>`);
-        // }
+        if (response.item_count === 0) {
+          $(".cart_UI")
+            .html(`<div class=" flex flex-col justify-center items-center gap-2">
+              <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" stroke="#D1D5DB" stroke-width="10"/>
+                <path d="M30 50L45 65L70 35" stroke="#4B5563" stroke-width="10" stroke-linecap="round"/>
+              </svg>
+              <div class="text-gray-500 text-lg inline-block">Your cart is empty</div>
+            </div>`);
+        }
       },
       error: function (error) {
         console.error("Error removing item from cart:", error);

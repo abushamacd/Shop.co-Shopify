@@ -34,6 +34,7 @@ jQuery(document).ready(function ($) {
           url: "/cart.js",
           dataType: "json",
           success: function (cart) {
+            $(".cart_drawer_item").empty();
             $.each(cart.items, function (index, item) {
               $(".cart_drawer_item").append(`
             <div class="product flex justify-between gap-4 border-b border-gray-200 py-2 ">
