@@ -51,6 +51,11 @@ jQuery(document).ready(function ($) {
   $(document).on("click", ".remove_from_cart", function (e) {
     e.preventDefault();
     var itemId = $(this).data("item-id");
+
+    let updates = {
+      [itemId]: 0,
+    };
+
     $.ajax({
       type: "POST",
       url: "/cart/update.js",
@@ -58,9 +63,10 @@ jQuery(document).ready(function ($) {
         "Content-Type": "application/json",
       },
       dataType: "json",
-      data: JSON.stringify({ [itemId]: 0 }),
+      data: JSON.stringify({ updates }),
       success: function (response) {
         console.log(response);
+        location.reload();
       },
       error: function (error) {
         console.error("Error removing item from cart:", error);
